@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <!-- Additional block for other CSS files -->
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <h1>My Django Site</h1>
+    </header>
+
+    <!-- Main content section -->
+    <div class="container">
+        {% block content %}
+        <!-- Content from child templates will go here -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2024 My Django Site</p>
+    </footer>
+
+    <!-- Additional block for JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {% block extra_js %}
+    {% endblock %}
+</body>
+</html>
